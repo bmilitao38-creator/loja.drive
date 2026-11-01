@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AutoDrive Premium | Veículos Novos e Seminovos</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            50: '#f0f4f9',
+                            500: '#1e3a8a',
+                            600: '#1d4ed8',
+                            700: '#1e40af',
+                            accent: '#ef4444',
+                            accentHover: '#dc2626'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+</head>
+<body class="bg-slate-900 text-slate-100 font-sans min-h-screen flex flex-col antialiased selection:bg-brand-accent selection:text-white">
+
+    <!-- TOP BAR -->
+    <div class="bg-slate-950 text-slate-400 text-xs py-2.5 px-4 border-b border-slate-800">
+        <div class="max-w-6xl mx-auto flex flex-wrap justify-between items-center gap-2">
+            <div class="flex items-center space-x-4">
+                <span><i class="fa-solid fa-location-dot text-brand-accent mr-1"></i> Av. das Nações Unidas, 12000 - São Paulo, SP</span>
+                <span class="hidden md:inline"><i class="fa-solid fa-clock text-slate-500 mr-1"></i> Seg a Sáb: 08h às 19h</span>
+            </div>
+            <div class="flex items-center space-x-4">
+                <a href="tel:08007778899" class="hover:text-white transition"><i class="fa-solid fa-phone mr-1"></i> (11) 4004-9999</a>
+                <a href="https://wa.me/5511999999999" target="_blank" class="text-emerald-400 hover:text-emerald-300 font-semibold transition flex items-center gap-1">
+                    <i class="fa-brands fa-whatsapp"></i> Atendimento Rápido
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- NAVBAR MINIMALISTA -->
+    <header class="sticky top-0 z-40 bg-slate-900/95 backdrop-blur border-b border-slate-800 shadow-xl">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <!-- Logo -->
+                <a href="#" class="flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-brand-accent to-red-600 flex items-center justify-center text-white shadow-lg shadow-red-500/30">
+                        <i class="fa-solid fa-car-side text-xl"></i>
+                    </div>
+                    <div>
+                        <span class="text-2xl font-black tracking-wider text-white">AUTO<span class="text-brand-accent">DRIVE</span></span>
+                        <span class="block text-[9px] tracking-widest text-slate-400 font-semibold uppercase">Veículos Selecionados</span>
+                    </div>
+                </a>
+
+                <!-- Call To Action Direct WhatsApp -->
+                <a href="https://wa.me/5511999999999?text=Olá!%20Gostaria%20de%20mais%20informações%20sobre%20os%20veículos%20disponíveis." 
+                   target="_blank" 
+                   class="px-5 py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-sm transition flex items-center gap-2 shadow-lg shadow-emerald-600/25">
+                    <i class="fa-brands fa-whatsapp text-lg"></i>
+                    <span>Falar no WhatsApp</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- HERO MINIMALISTA -->
+    <section class="bg-slate-950 py-12 border-b border-slate-800">
+        <div class="max-w-4xl mx-auto px-4 text-center">
+            <span class="inline-block px-3 py-1 bg-red-500/10 text-brand-accent border border-red-500/20 rounded-full text-xs font-bold uppercase tracking-wider mb-3">
+                <i class="fa-solid fa-shield-halved mr-1"></i> Procedência Garantida & Vistoria Aprovada
+            </span>
+            <h1 class="text-3xl sm:text-4xl font-black text-white tracking-tight">
+                Estoque Selecionado de Veículos
+            </h1>
+            <p class="mt-2 text-slate-400 text-sm sm:text-base max-w-xl mx-auto">
+                Confira nossas 5 ofertas exclusivas da semana. Atendimento direto e negociação simplificada pelo WhatsApp.
+            </p>
+        </div>
+    </section>
+
+    <!-- ESTOQUE EXCLUSIVO (EXATAMENTE 5 VEÍCULOS) -->
+    <main class="py-12 bg-slate-900 flex-grow">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div id="vehiclesGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 justify-center">
+                <!-- Renderizado via JS com os 5 veículos padronizados -->
+            </div>
+        </div>
+    </main>
+
+    <!-- FOOTER SIMPLE -->
+    <footer class="bg-slate-950 border-t border-slate-800 text-slate-400 text-sm py-10">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-4">
+            <div class="flex items-center justify-center gap-2">
+                <div class="w-7 h-7 rounded-lg bg-brand-accent flex items-center justify-center text-white text-xs">
+                    <i class="fa-solid fa-car-side"></i>
+                </div>
+                <span class="text-lg font-black text-white">AUTO<span class="text-brand-accent">DRIVE</span></span>
+            </div>
+            <p class="text-xs text-slate-500 max-w-md mx-auto">
+                Av. das Nações Unidas, 12000 - São Paulo, SP • Atendimento de Segunda a Sábado das 08h às 19h
+            </p>
+            <div class="pt-4 border-t border-slate-900 text-xs text-slate-600">
+                &copy; 2026 AutoDrive Premium. Todos os direitos reservados.
+            </div>
+        </div>
+    </footer>
+
+    <!-- JAVASCRIPT LOGIC -->
+    <script>
+        // DATASET DE EXATAMENTE 5 VEÍCULOS
+        const vehicles = [
+            {
+                id: 1,
+                title: "Toyota Corolla 2.0 Altis Premium",
+                brand: "Toyota",
+                price: 135000,
+                year: "2023/2023",
+                km: 24000,
+                transmission: "Automático CVT",
+                fuel: "Flex",
+                color: "Prata Nevoa",
+                badge: "Destaque",
+                image: "https://images.unsplash.com/photo-1621007947382-bb3c3994e3fb?auto=format&fit=crop&w=800&q=80"
+            },
+            {
+                id: 2,
+                title: "Jeep Compass Longitude T270",
+                brand: "Jeep",
+                price: 148900,
+                year: "2023/2024",
+                km: 19500,
+                transmission: "Automático",
+                fuel: "Flex",
+                color: "Preto Carbon",
+                badge: "Único Dono",
+                image: "https://images.unsplash.com/photo-1519641471654-76ce0107ad1b?auto=format&fit=crop&w=800&q=80"
+            },
+            {
+                id: 3,
+                title: "BMW 320i M Sport 2.0 Turbo",
+                brand: "BMW",
+                price: 279000,
+                year: "2022/2023",
+                km: 16000,
+                transmission: "Automático",
+                fuel: "Flex",
+                color: "Branco Alpino",
+                badge: "Revisado na Concessionária",
+                image: "https://images.unsplash.com/photo-1555215695-3004980ad54e?auto=format&fit=crop&w=800&q=80"
+            },
+            {
+                id: 4,
+                title: "Volkswagen Nivus Highline 200 TSI",
+                brand: "Volkswagen",
+                price: 118900,
+                year: "2023/2023",
+                km: 28000,
+                transmission: "Automático",
+                fuel: "Flex",
+                color: "Cinza Moonstone",
+                badge: "Garantia de Fábrica",
+                image: "https://images.unsplash.com/photo-1541899481282-d53bffe3c35d?auto=format&fit=crop&w=800&q=80"
+            },
+            {
+                id: 5,
+                title: "Toyota Hilux SRX 4x4 2.8 Turbo",
+                brand: "Toyota",
+                price: 269900,
+                year: "2022/2022",
+                km: 35000,
+                transmission: "Automático",
+                fuel: "Diesel",
+                color: "Prata Metalico",
+                badge: "4x4 Impecável",
+                image: "https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?auto=format&fit=crop&w=800&q=80"
+            }
+        ];
+
+        window.addEventListener('DOMContentLoaded', () => {
+            const grid = document.getElementById('vehiclesGrid');
+            
+            grid.innerHTML = vehicles.map(item => {
+                const formattedPrice = item.price.toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+                const whatsappMessage = encodeURIComponent(`Olá! Tenho interesse no veículo ${item.title} ano ${item.year} anunciado por R$ ${formattedPrice}.`);
+                const whatsappUrl = `https://wa.me/5511999999999?text=${whatsappMessage}`;
+
+                return `
+                    <div class="bg-slate-950 border border-slate-800 rounded-2xl overflow-hidden hover:border-slate-700 transition duration-300 flex flex-col justify-between shadow-xl">
+                        <div>
+                            <!-- Imagem -->
+                            <div class="relative overflow-hidden h-56 bg-slate-900">
+                                <img src="${item.image}" alt="${item.title}" class="w-full h-full object-cover" onerror="this.src='https://placehold.co/800x500/1e293b/ffffff?text=AutoDrive'">
+                                <span class="absolute top-3 left-3 bg-brand-accent text-white text-[10px] font-black uppercase px-2.5 py-1 rounded-md tracking-wider shadow">
+                                    ${item.badge}
+                                </span>
+                            </div>
+
+                            <!-- Informações do Veículo -->
+                            <div class="p-6">
+                                <span class="text-xs font-bold uppercase text-brand-accent tracking-wider">${item.brand}</span>
+                                <h3 class="text-lg font-bold text-white mt-0.5 leading-snug">${item.title}</h3>
+                                
+                                <div class="grid grid-cols-2 gap-2.5 my-5 pt-4 border-t border-slate-900 text-xs text-slate-300">
+                                    <div><i class="fa-regular fa-calendar text-slate-500 mr-1.5"></i> <strong>Ano:</strong> ${item.year}</div>
+                                    <div><i class="fa-solid fa-gauge text-slate-500 mr-1.5"></i> <strong>KM:</strong> ${item.km.toLocaleString('pt-BR')} km</div>
+                                    <div><i class="fa-solid fa-gears text-slate-500 mr-1.5"></i> <strong>Câmbio:</strong> ${item.transmission}</div>
+                                    <div><i class="fa-solid fa-gas-pump text-slate-500 mr-1.5"></i> <strong>Comb.:</strong> ${item.fuel}</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Preço & Ação Direta no WhatsApp -->
+                        <div class="p-6 pt-0">
+                            <div class="flex items-baseline justify-between mb-4">
+                                <span class="text-xs text-slate-500 uppercase font-bold tracking-wider">Valor à Vista</span>
+                                <span class="text-2xl font-black text-emerald-400">R$ ${formattedPrice}</span>
+                            </div>
+                            
+                            <a href="${whatsappUrl}" target="_blank" class="w-full py-3.5 bg-emerald-600 hover:bg-emerald-500 text-white font-bold rounded-xl transition flex items-center justify-center gap-2 shadow-lg shadow-emerald-600/25">
+                                <i class="fa-brands fa-whatsapp text-xl"></i>
+                                <span>Tenho Interesse</span>
+                            </a>
+                        </div>
+                    </div>
+                `;
+            }).join('');
+        });
+    </script>
+</body>
+</html>
